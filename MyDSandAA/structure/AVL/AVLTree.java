@@ -73,9 +73,15 @@ public class AVLTree<T extends Comparable<? super T>>{
         return k1;
     }
 
+    /**
+     * The method name RL means that from the node to be inserted,
+     *
+     * @param k3
+     * @return
+     */
     private AvlNode<T> rotateRL(AvlNode<T> k3){
-        AvlNode<T> k1 = k3.lt;
-        AvlNode<T> k2 = k1.rt;
-
+        k3.lt = rotateRR(k3.lt);
+        return rotateLL(k3);
     }
+
 }
